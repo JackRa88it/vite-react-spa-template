@@ -6,9 +6,9 @@
   border: 1px solid black;
 }
 
-.home-tab,
-.about-tab,
-.contact-tab {
+.home,
+.about,
+.contact {
   width: 300px;
   height: 300px;
   border: 1px solid black;
@@ -24,5 +24,5 @@
 
 .active {
   color: black;
-  font-weight: bold;
+  text-decoration: underline;
 }

@@ -7,16 +7,16 @@ export default function App() {
   let currentTab
   switch (tab) {
     case 'home':
-      currentTab = <HomeTab />
+      currentTab = <Home />
       break;
     case 'about':
-      currentTab = <AboutTab />
+      currentTab = <About />
       break;
     case 'contact':
-      currentTab = <ContactTab />
+      currentTab = <Contact />
       break;
     default:
-      currentTab = <HomeTab />
+      currentTab = <Home />
   }
 
   return (
@@ -33,33 +33,53 @@ export default function App() {
 function Navbar({ tab, onTabClick }) {
   return (
     <nav className='navbar'>
-      <div className='logo' onClick={(e) => onTabClick('home')}>LOGO</div>
-      <div className='tab' onClick={(e) => onTabClick('home')}>Home</div>
-      <div className='tab' onClick={(e) => onTabClick('about')}>About</div>
-      <div className='tab' onClick={(e) => onTabClick('contact')}>Contact</div>
+      <div
+        className='logo'
+        onClick={(e) => onTabClick('home')}
+      >
+        LOGO
+      </div>
+      <div
+        className={`tab${tab === 'home' ? ' active' : ''}`}
+        onClick={(e) => onTabClick('home')}
+      >
+        Home
+      </div>
+      <div
+        className={`tab${tab === 'about' ? ' active' : ''}`}
+        onClick={(e) => onTabClick('about')}
+      >
+        About
+      </div>
+      <div
+        className={`tab${tab === 'contact' ? ' active' : ''}`}
+        onClick={(e) => onTabClick('contact')}
+      >
+        Contact
+      </div>
     </nav>
   )
 }
 
-function HomeTab() {
+function Home() {
   return (
-    <div className='home-tab'>
+    <div className='home'>
       Home tab
     </div>
   )
 }
 
-function AboutTab() {
+function About() {
   return (
-    <div className='about-tab'>
+    <div className='about'>
       About tab
     </div>
   )
 }
 
-function ContactTab() {
+function Contact() {
   return (
-    <div className='contact-tab'>
+    <div className='contact'>
       Contact tab
     </div>
   )
